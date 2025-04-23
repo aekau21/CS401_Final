@@ -1,0 +1,20 @@
+#TO RUN BACKEND
+#cd CS401_Final\vue-app-working\py py app.py (In terminal)
+# http://127.0.0.1:5000/api/timeline (to visit, to check if running)
+
+#TO RUN FRONTEND
+#finalProject\CS401_Final\vue-app-working py -m http.server (In terminal)
+# http://127.0.0.1:8000 (to visit, to check if running)
+
+
+
+
+
+
+
+
+
+
+
+
+
