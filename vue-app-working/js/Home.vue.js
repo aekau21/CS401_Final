@@ -1,5 +1,18 @@
 const Home = {
   template: `
+  <!-- Hero Section -->
+  asdfghf
+<div class="hero relative bg-cover bg-center sm:h-64 md:h-80 lg:h-96 flex items-center justify-center text-white text-3xl font-bold" 
+    style="background-image: url('https://wallpapercat.com/w/full/3/2/1/1324871-1920x1200-desktop-hd-history-background-image.jpg');">
+  
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <!-- Hero Text -->
+  <div class="z-10">
+    The Imperial Thread
+  </div>
+</div>
     <!-- Box Container -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl px-4">
   <div v-for="box in boxes" :key="box.link"
@@ -23,9 +36,9 @@ const Home = {
   data() {
     return {
       boxes: [
-        { title: 'Page 1', description: 'Go to the first page', link: '/page1' },
-        { title: 'Page 2', description: 'Explore the second page', link: '/page2' },
-        { title: 'Page 3', description: 'Check out the third page', link: '/page3' }
+        { title: 'Timelines', description: 'Go to the first page', link: '/page1' },
+        { title: 'Comparisons', description: 'Explore the second page', link: '/page2' },
+        { title: 'Themes', description: 'Check out the third page', link: '/page3' }
       ]
     };
   }
