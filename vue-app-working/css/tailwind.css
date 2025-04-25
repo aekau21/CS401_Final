@@ -11,7 +11,7 @@ body {
 }
 .bg-blue-600 { background-color: #2563eb; }
 .hover\:bg-blue-500:hover { background-color: #3b82f6; }
-.text-white { color: white; }
+.text-white { color: rgb(233, 214, 214); }
 .text-black { color: black; }
 .text-xl { font-size: 1.25rem; }
 .text-2xl { font-size: 1.5rem; }
