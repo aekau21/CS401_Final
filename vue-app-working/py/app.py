@@ -2,6 +2,7 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 from models import db, Timeline, Comparative, Thematic
 from config import Config
+from flask import request
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -28,6 +29,8 @@ def get_timeline():
             "treaties": r.treaties
         } for r in records
     ])
+
+
 
 
 # COMPARATIVE API ROUTE
@@ -62,5 +65,32 @@ def get_thematic():
         } for r in records
     ])
 
+#Add a timeline, POST
+@app.route('/api/timeline', methods=['POST'])
+def create_timeline():
+    data = request.get_json()
+    new = Timeline(
+        dynasty=data['dynasty'],
+        emperor_name=data['emperor_name'],
+        dates_ruled=data['dates_ruled'],
+        notable_events=data['notable_events'],
+        wars=data['wars'],
+        advancements=data['advancements'],
+        treaties=data['treaties']
+    )
+    db.session.add(new)
+    db.session.commit()
+    return jsonify({"message": "Timeline created"}), 201
+
+#Delete a Timeline
+@app.route('/api/timeline/<int:id>', methods=['DELETE'])
+def delete_timeline(id):
+    timeline = db.session.get(Timeline, id)
+    if not timeline:
+        return jsonify({"error": "Timeline not found"}), 404
+    db.session.delete(timeline)
+    db.session.commit()
+    return jsonify({"message": "Deleted successfully"})
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
