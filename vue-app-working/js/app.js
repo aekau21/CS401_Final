@@ -6,7 +6,6 @@ const router = new VueRouter({
     { path: '/page2', component: Page2 },
     { path: '/page3', component: Page3 },
     { path: '/about', component: About },
-    { path: '/contact', component: Contact }
   ]
 });
 
