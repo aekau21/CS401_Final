@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 from models import db, Timeline, Comparative, Thematic
 from config import Config
@@ -61,6 +61,40 @@ def get_thematic():
             "associated_figures": r.associated_figures
         } for r in records
     ])
+
+# POST TIMELINE ENTRY
+@app.route('/api/timeline', methods=['POST'])
+def create_timeline():
+    try:
+        data = request.get_json()
+        new_record = Timeline(
+            dynasty=data.get('dynasty'),
+            emperor_name=data.get('emperor_name'),
+            dates_ruled=data.get('dates_ruled'),
+            notable_events=data.get('notable_events'),
+            wars=data.get('wars'),
+            advancements=data.get('advancements'),
+            treaties=data.get('treaties')
+        )
+        db.session.add(new_record)
+        db.session.commit()
+        return {"message": "Timeline record created successfully."}, 201
+    except Exception as e:
+        return {"error": str(e)}, 400
+
+# DELETE TIMELINE ENTRY
+@app.route('/api/timeline/<int:id>', methods=['DELETE'])
+def delete_timeline(id):
+    try:
+        record = db.session.get(Timeline, id)
+        if record is None:
+            return {"error": f"Timeline record {id} not found."}, 404
+        db.session.delete(record)
+        db.session.commit()
+        return {"message": f"Timeline record {id} deleted successfully."}, 200
+    except Exception as e:
+        return {"error": str(e)}, 400
+
 
 if __name__ == '__main__':
     app.run(debug=True)

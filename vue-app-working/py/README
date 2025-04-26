@@ -1,3 +1,5 @@
+#
+
 #TO RUN BACKEND
 #cd CS401_Final\vue-app-working\py py app.py (In terminal)
 # http://127.0.0.1:5000/api/timeline (to visit, to check if running)
@@ -7,11 +9,19 @@
 # http://127.0.0.1:8000 (to visit, to check if running)
 
 
+#Test API
+#finalProject\CS401_Final\vue-app-working\py> py -m pytest test_api.py
 
+#Running API with docker
+#docker build -t flask-api . (teminal)
+#docker run -p 5000:5000 flask-api (terminal)
+#docker exec -it flask-api-container python seed.py
+#http://127.0.0.1:5000/api/timeline
+#http://127.0.0.1:5000/api/comparative
+#http://127.0.0.1:5000/api/thematic
 
-
-
-
+#API Public Release
+#https://kole-8374803.postman.co/workspace/kole's-Workspace~a903d195-a6de-4354-814a-9dc64419ecca/collection/44447933-b40ca5c5-a8a1-4949-b5cb-074a0befa6c6?action=share&creator=44447933
 
 
 
