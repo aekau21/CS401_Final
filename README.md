@@ -8,7 +8,7 @@
 ## Course
 CS401
 
-## Installation
+## Installation and running the server
 Follow these steps to download and run the website:
 1. Clone the repository:
    ```bash
@@ -22,7 +22,7 @@ Follow these steps to download and run the website:
     ```bash
     python -m http.server
 
-## (OPTIONAL) Check and ensure the flask API is running
+## Ensure the flask API is running
 
 4. Navigate to the py directory
     ```bash
