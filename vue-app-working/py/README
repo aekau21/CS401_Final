@@ -60,7 +60,6 @@
 #finalProject\CS401_Final\vue-app-working py -m http.server (In terminal)
 # http://127.0.0.1:8000 (to visit, to check if running)
 
-<<<<<<< HEAD
 
 #Test API
 #finalProject\CS401_Final\vue-app-working\py> py -m pytest test_api.py
@@ -82,9 +81,6 @@
 
 
 
-
-
->>>>>>> e9f1866e44ee7d3b7b90cbe5d5a2ae554cb042e0
 
 
 
