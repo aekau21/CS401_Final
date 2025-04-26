@@ -1,4 +1,56 @@
-#
+#History Dashboard 
+# BY: Anson Ekau, Grace Stewart, and Kole Nagai
+
+#simplified file structure
+#C:.
+    ├───css
+    │       tailwind.css
+    │
+    ├───js
+    │       About.vue.js
+    │       app.js
+    │       Contact.vue.js
+    │       Home.vue.js
+    │       Page1.vue.js
+    │       Page2.vue.js
+    │       Page3.vue.js
+    │
+    └───py
+        │   app.py
+        │   config.py
+        │   data.db
+        │   dev.py
+        │   dockerfile
+        │   models.py
+        │   README
+        │   seed.py
+        │   test_api.py
+        │
+        ├───.pytest_cache
+        │   │   .gitignore
+        │   │   CACHEDIR.TAG
+        │   │   README.md
+        │   │
+        │   └───v
+        │       └───cache
+        │               nodeids
+        │               stepwise
+        │
+        └───__pycache__
+                app.cpython-313.pyc
+                config.cpython-312.pyc
+                config.cpython-313.pyc
+                models.cpython-312.pyc
+                models.cpython-313.pyc
+                test_api.cpython-313-pytest-8.3.5.pyc
+
+#css folder has the tailwind elements used to help with front end design
+
+#js folder contains most of the frontend components to the website, alongside the website pages and home page
+
+# py folder holds all of the back end elements, including api test file, data base, data base structure, API and base app, and a dockerfile that containerize the APIs
+
+
 
 #TO RUN BACKEND
 #cd CS401_Final\vue-app-working\py py app.py (In terminal)
