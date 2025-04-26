@@ -60,6 +60,7 @@
 #finalProject\CS401_Final\vue-app-working py -m http.server (In terminal)
 # http://127.0.0.1:8000 (to visit, to check if running)
 
+<<<<<<< HEAD
 
 #Test API
 #finalProject\CS401_Final\vue-app-working\py> py -m pytest test_api.py
@@ -74,6 +75,16 @@
 
 #API Public Release
 #https://kole-8374803.postman.co/workspace/kole's-Workspace~a903d195-a6de-4354-814a-9dc64419ecca/collection/44447933-b40ca5c5-a8a1-4949-b5cb-074a0befa6c6?action=share&creator=44447933
+=======
+#Running API with docker
+#docker build -t flask-api . (teminal)
+#docker run -p 5000:5000 flask-api (terminal)
+
+
+
+
+
+>>>>>>> e9f1866e44ee7d3b7b90cbe5d5a2ae554cb042e0
 
 
 

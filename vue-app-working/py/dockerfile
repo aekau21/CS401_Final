@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> e9f1866e44ee7d3b7b90cbe5d5a2ae554cb042e0
 FROM python:3.13-slim
 
 WORKDIR /app
 
+<<<<<<< HEAD
 COPY . .
 
 RUN pip install --no-cache-dir flask flask_sqlalchemy flask_cors
@@ -10,3 +14,12 @@ RUN pip install --no-cache-dir flask flask_sqlalchemy flask_cors
 EXPOSE 5000
 
 CMD ["python", "app.py"]
+=======
+COPY . /app
+
+RUN pip install flask flask_sqlalchemy flask-cors pytest
+
+EXPOSE 5000
+
+CMD ["sh", "-c", "python seed.py && python app.py"]
+>>>>>>> e9f1866e44ee7d3b7b90cbe5d5a2ae554cb042e0
