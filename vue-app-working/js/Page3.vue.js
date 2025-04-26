@@ -1,69 +1,107 @@
 const Page3 = {
   template: `
     <div>
-      <a @click="$router.push('/')" class="text-blue-400 hover:text-blue-200 underline cursor-pointer">← Home</a>
-      
-      <div>
-        <div class="px-4 sm:px-0">
-          <h3 class="text-base/7 font-semibold text-gray-900">Applicant Information</h3>
-          <p class="mt-1 max-w-2xl text-sm/6 text-gray-500">Personal details and application.</p>
-        </div>
-        <div class="mt-6 border-t border-gray-100">
-          <dl class="divide-y divide-gray-100">
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt class="text-sm/6 font-medium text-gray-900">Full name</dt>
-              <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">Margot Foster</dd>
-            </div>
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt class="text-sm/6 font-medium text-gray-900">Application for</dt>
-              <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">Backend Developer</dd>
-            </div>
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt class="text-sm/6 font-medium text-gray-900">Email address</dt>
-              <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">margotfoster@example.com</dd>
-            </div>
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt class="text-sm/6 font-medium text-gray-900">Salary expectation</dt>
-              <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">$120,000</dd>
-            </div>
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt class="text-sm/6 font-medium text-gray-900">About</dt>
-              <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.</dd>
-            </div>
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt class="text-sm/6 font-medium text-gray-900">Attachments</dt>
-              <dd class="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                <ul role="list" class="divide-y divide-gray-100 rounded-md border border-gray-200">
-                  <li class="flex items-center justify-between py-4 pr-5 pl-4 text-sm/6">
-                    <div class="flex w-0 flex-1 items-center">
-                      <PaperClipIcon class="size-5 shrink-0 text-gray-400" aria-hidden="true" />
-                      <div class="ml-4 flex min-w-0 flex-1 gap-2">
-                        <span class="truncate font-medium">resume_back_end_developer.pdf</span>
-                        <span class="shrink-0 text-gray-400">2.4mb</span>
-                      </div>
-                    </div>
-                    <div class="ml-4 shrink-0">
-                      <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
-                    </div>
-                  </li>
-                  <li class="flex items-center justify-between py-4 pr-5 pl-4 text-sm/6">
-                    <div class="flex w-0 flex-1 items-center">
-                      <PaperClipIcon class="size-5 shrink-0 text-gray-400" aria-hidden="true" />
-                      <div class="ml-4 flex min-w-0 flex-1 gap-2">
-                        <span class="truncate font-medium">coverletter_back_end_developer.pdf</span>
-                        <span class="shrink-0 text-gray-400">4.5mb</span>
-                      </div>
-                    </div>
-                  <div class="ml-4 shrink-0">
-                    <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
+      <a @click="$router.push('/')" class="text-blue-400 hover:text-blue-200 underline cursor-pointer mb-6 block">← Home</a>
+
+      <div class="flex flex-row items-start gap-10">
+
+      <!-- LEFT SIDE: Title, Desc ABOVE Sticky Image -->
+<div class="w-1/2 flex flex-col items-center sticky top-10">
+
+  <!-- Title and description ABOVE the sticky image -->
+  <div class="mb-6 text-left">
+    <h2 class="text-3xl font-bold text-gray-100">
+      𝐓𝐡𝐞𝐦𝐞𝐬 ⋆｡°✩
+    </h2>
+    <p class="text-gray-300 text-sm mt-2 max-w-xs">
+      Get insights into governance, religion, culture, and economic systems across both empires.
+    </p>
+  </div>
+
+  <!-- Sticky Image -->
+  <div class="sticky top-24">
+    <img 
+      src="https://p1-tt.byteimg.com/origin/tos-cn-i-qvj2lq49k0/ea1e92b2f96843b589e53b65ad0a8a50.jpg" 
+      alt="pg3 Image" 
+      class="rounded-lg object-cover w-full max-w-sm shadow-lg"
+    >
+  </div>
+</div>
+
+        <!-- RIGHT SIDE: Timeline Cards -->
+        <div class="w-1/2 space-y-8 pr-6">
+          <div v-for="themes in thematic" :key="themes.id" class="bg-white shadow-md rounded-lg p-6">
+
+            <!-- Twitter-style header -->
+            <div class="flex items-start justify-between">
+              <div class="flex items-center gap-4">
+                <img class="w-10 h-10 object-cover rounded-full" 
+                     src="https://pbs.twimg.com/profile_images/1774928812641271810/PpVXAHSr_400x400.jpg" 
+                     alt="Profile Icon">
+                <div class="flex flex-col">
+                  <div class="flex items-center gap-2">
+                    <p class="text-gray-800 font-semibold text-base">The Imperial Thread</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" 
+                         alt="Verified Badge" 
+                         class="w-4 h-4 object-contain">
                   </div>
-                </li>
-              </ul>
-            </dd>
-          </div>
-        </dl>
-      </div>
+                  <p class="text-gray-400 text-xs">@imperialthread</p>
+                </div>
+              </div>
+              <div class="text-gray-400 text-3xl hover:text-gray-600 cursor-pointer transition mt-1 pr-2">⋯</div>
+            </div>
+
+            <!-- Card body -->
+            <div class="px-4 py-6">
+              <h2 class="text-lg font-bold text-gray-800 mb-2 flex items-left justify-left gap-2">
+                <span>{{ themes.theme }}</span>
+              </h2>
+              <p class="text-gray-700 text-base">
+                ─── ⋆⋅ ♰ ⋅⋆ ───
+                <br>
+                Desc: {{ themes.theme_description }}
+                <br>
+                Dynasty: {{ themes.dynasty }}
+                <br>
+                Events: {{ themes.example_events }}
+                <br>
+                Figure: {{ themes.associated_figures }}
+              </p>
+            </div>
+
+            <!-- Footer -->
+            <div class="pt-6 text-gray-400 text-sm space-y-4">
+              <div class="flex items-center gap-2 justify-start pl-4">
+                <span>12:27 PM • April 2025</span>
+              </div>
+              <div class="border-t border-gray-200 mx-4"></div>
+              <div class="flex justify-center gap-12 text-gray-400 mt-4">
+                <img src="https://cdn-icons-png.flaticon.com/512/5941/5941106.png" alt="Comment" class="w-6 h-6 object-contain hover:scale-110 transition cursor-pointer">
+                <img src="https://cdn-icons-png.flaticon.com/512/1388/1388895.png" alt="Retweet" class="w-6 h-6 object-contain hover:scale-110 transition cursor-pointer">
+                <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt="Like" class="w-6 h-6 object-contain hover:scale-110 transition cursor-pointer">
+                <img src="https://www.svgrepo.com/show/361601/share-2.svg" alt="Share" class="w-6 h-6 object-contain hover:scale-110 transition cursor-pointer">
+              </div>
+            </div>
+
+          </div> <!-- end of v-for card -->
+        </div> <!-- end of right side cards -->
+
+      </div> <!-- end flex -->
     </div>
-   </div> 
-  `
+  `,
+  data() {
+    return {
+      thematic: []
+    };
+  },
+  mounted() {
+    fetch('http://localhost:5000/api/thematic')
+      .then(response => response.json())
+      .then(data => {
+        // Sort by ID
+        data.sort((a, b) => a.id - b.id);
+        this.thematic = data;
+      })
+      .catch(error => console.error('Error:', error));
+  }  
 };
